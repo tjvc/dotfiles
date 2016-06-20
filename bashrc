@@ -48,6 +48,9 @@ fi
 # Coloured prompt
 PS1="\[\033[$uh_color\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
+# Show hostname in iTerm tab title
+PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
+
 # Predictable SSH authentication socket location
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
