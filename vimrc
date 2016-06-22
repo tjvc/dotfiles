@@ -9,8 +9,8 @@ call vundle#begin()
 " General
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-sensible'
+Plugin 'w0ng/vim-hybrid'
 
 " File navigation
 
@@ -45,9 +45,8 @@ syntax on
 " Filetype detection, filetype plugins, indent scripts
 filetype plugin indent on
 
-" Solarized
-set background=dark
-colorscheme solarized
+" colorscheme
+colorscheme monokai
 
 " Soft tabs, two spaces
 set tabstop=2
