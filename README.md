@@ -28,3 +28,31 @@ This requires Livedown (<https://github.com/shime/livedown>). To install, first 
 ```bash
     $ sudo npm install -g livedown
 ```
+
+#### syntastic
+
+To enable Ruby and JavaScript syntax checking, install RuboCop and JSLint.
+
+##### RuboCop
+
+Assuming RVM is installed:
+
+```bash
+    $ gem install rubocop
+```
+
+##### JSLint
+
+First install Node.js:
+
+```bash
+    $ sudo apt-get install nodejs nodejs-legacy
+```
+
+(On OS X, Node.js can be installed using Homebrew)
+
+Then:
+
+```bash
+    $ sudo npm install -g jslint
+```
