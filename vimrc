@@ -10,7 +10,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
-Plugin 'w0ng/vim-hybrid'
+
+" Colorschemes
+
+Plugin 'morhetz/gruvbox'
 
 " File navigation
 
@@ -45,8 +48,9 @@ syntax on
 " Filetype detection, filetype plugins, indent scripts
 filetype plugin indent on
 
-" colorscheme
-colorscheme monokai
+" Colorscheme
+set background=dark
+colorscheme Tomorrow-Night
 
 " Soft tabs, two spaces
 set tabstop=2
