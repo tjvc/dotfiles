@@ -14,6 +14,7 @@ Plugin 'tpope/vim-sensible'
 " Colorschemes
 
 Plugin 'morhetz/gruvbox'
+Plugin 'chriskempson/base16-vim'
 
 " File navigation
 
@@ -50,7 +51,8 @@ filetype plugin indent on
 
 " Colorscheme
 set background=dark
-colorscheme Tomorrow-Night
+let base16colorspace=256
+colorscheme base16-default-dark
 
 " Soft tabs, two spaces
 set tabstop=2

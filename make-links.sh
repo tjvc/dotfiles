@@ -13,5 +13,10 @@ ln -sf ~/dotfiles/vimrc ~/.vimrc
 
 # Directories
 
-ln -sfT ~/dotfiles/git-templates ~/.git-templates
-mkdir -p ~/.vim && ln -sfT ~/dotfiles/vim/colors ~/.vim/colors
+[[ ! -d ~/.git-templates ]] && ln -s ~/dotfiles/git-templates ~/.git-templates
+
+mkdir -p ~/.config
+[[ ! -d ~/.config/base16-shell ]] && ln -s ~/dotfiles/config/base16-shell ~/.config/base16-shell
+
+mkdir -p ~/.vim
+[[ ! -d ~/.vim/colors ]] && ln -s ~/dotfiles/vim/colors ~/.vim/colors

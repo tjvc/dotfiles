@@ -83,6 +83,10 @@ vim()
   stty "$STTYOPTS"
 }
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Include .bash_aliases
 if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
