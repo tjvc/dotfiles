@@ -62,6 +62,9 @@ set expandtab
 " Show line numbers
 set number
 
+" Show ruler at 80 columns
+set colorcolumn=80
+
 " Break lines on word boundaries
 set linebreak
 
@@ -94,7 +97,7 @@ set statusline+=%{strlen(&fenc)?'['.&fenc.']':''} " file encoding
 set statusline+=%r " readonly flag
 set statusline+=%m " modified flag
 set statusline+=%= " separation point between left and right aligned items
-set statusline+=%-14.(%l,%c%V%)\ " line number, column number (left aligned, minimum width 14)
+" set statusline+=%-14.(%l,%c%V%)\ " line number, column number (left aligned, minimum width 14)
 set statusline+=%P " percentage through file
 set statusline+=\ %{SyntasticStatuslineFlag()}
 
@@ -105,6 +108,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = [ "mri", "rubocop" ]
+
+let g:syntastic_javascript_jslint_args =
+  \ "--white --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars --browser --predef $"
 
 " Key bindings
 
