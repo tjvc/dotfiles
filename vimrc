@@ -78,6 +78,10 @@ set clipboard=unnamed
 " Syntax highlighting for Markdown is buggy, so disable it
 autocmd Filetype markdown setlocal syntax=OFF
 
+" HTML indentation
+let g:html_indent_autotags = "html"
+let g:html_indent_inctags = "head,body"
+
 " Remove trailing whitespace on write
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
