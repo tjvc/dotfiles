@@ -132,10 +132,5 @@ nnoremap <Right> <NOP>
 nnoremap <Up>    <NOP>
 nnoremap <Down>  <NOP>
 
-" C-s saves
-nmap <C-s> :w<CR>
-vmap <C-s> <Esc><C-s>gv
-imap <C-s> <Esc><C-s>
-
 " Use jj to exit insert mode
 inoremap jj <Esc>
