@@ -34,12 +34,13 @@ Plugin 'tpope/vim-repeat'
 " For specific filetypes/applications
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'shime/vim-livedown'
 Plugin 'Valloric/MatchTagAlways'
-Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-ragtag'
 
 call vundle#end()
 
