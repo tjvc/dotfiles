@@ -91,3 +91,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
 if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
+
+# tmuxinator
+export EDITOR='vim'
+source ~/.bin/tmuxinator.bash
