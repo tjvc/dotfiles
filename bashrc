@@ -65,12 +65,6 @@ export PATH="$PATH:/usr/local/heroku/bin"
 # Set ls colors
 eval $(dircolors ~/.dircolors)
 
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Use ctrl+s in vim
 vim()
 {
