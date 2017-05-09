@@ -77,3 +77,6 @@ fi
 # tmuxinator
 export EDITOR='vim'
 source ~/.bin/tmuxinator.bash
+
+# Add ~/bin to PATH for custom scripts
+export PATH="$PATH:$HOME/bin"
