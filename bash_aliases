@@ -11,18 +11,6 @@ alias l='ls -CF'
 alias ss='bin/rails server'
 alias sc='bin/rails console'
 
-# Apache
-alias apr='sudo service apache2 restart'
-alias aps='sudo service apache2 start'
-alias apst='sudo service apache2 stop'
-alias apss='sudo service apache2 status'
-
-# Tomcat7
-alias tcr='sudo service tomcat7 restart'
-alias tcs='sudo service tomcat7 start'
-alias tcst='sudo service tomcat7 stop'
-alias tcss='sudo service tomcat7 status'
-
 # Git
 alias gs='git status'
 alias gb='git branch -a --color'
@@ -40,5 +28,3 @@ alias tm='tmux attach || tmux new'
 
 # grep
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
