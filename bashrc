@@ -65,15 +65,6 @@ export PATH="$PATH:/usr/local/heroku/bin"
 # Set ls colors
 eval $(dircolors ~/.dircolors)
 
-# Use ctrl+s in vim
-vim()
-{
-  local STTYOPTS="$(stty --save)"
-  stty stop '' -ixoff
-  command vim "$@"
-  stty "$STTYOPTS"
-}
-
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
