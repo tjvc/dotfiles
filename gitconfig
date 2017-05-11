@@ -1,0 +1,7 @@
+[core]
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore_global
+[init]
+	templatedir = ~/.git-templates
+[push]
+	default = simple
