@@ -1,18 +1,24 @@
-# Put OS X specific settings in this file
+# This file is read by login shells. Use it to for configuration values that
+# apply to the whole session.
 
-# Look for GNU coreutils and man pages first
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
+# Idempotently update PATH
+update_path() { case ":${PATH:=$1}:" in *:$1:*) ;; *) PATH="$1:$PATH" ;; esac; }
 
-# Show hostname in iTerm tab title
-PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
+# Look for Homebrew-installed GNU coreutils and man pages first
+update_path '/usr/local/opt/coreutils/libexec/gnubin'
+export MANPATH='/usr/local/opt/coreutils/libexec/gnuman/:'
 
-# Enable tab completion for Homebrew-installed git
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
-fi
+# Add ~/bin to PATH for custom scripts
+update_path "$HOME/bin"
+
+# Added by the Heroku Toolbelt
+update_path '/usr/local/heroku/bin'
+
+export EDITOR='vim'
 
 # Include .bashrc
-if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
+if [ -n "$BASH_VERSION" ]; then
+  if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
 fi
