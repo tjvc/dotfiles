@@ -1,20 +1,23 @@
 # This file is read by login shells. Use it to for configuration values that
 # apply to the whole session.
 
-# Idempotently update PATH
-update_path() { case ":${PATH:=$1}:" in *:$1:*) ;; *) PATH="$1:$PATH" ;; esac; }
-
 # Look for Homebrew-installed GNU coreutils and man pages first
-update_path '/usr/local/opt/coreutils/libexec/gnubin'
-export MANPATH='/usr/local/opt/coreutils/libexec/gnuman/:'
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
 
 # Add ~/bin to PATH for custom scripts
-update_path "$HOME/bin"
+PATH="$HOME/bin:$PATH"
 
 # Added by the Heroku Toolbelt
-update_path '/usr/local/heroku/bin'
+PATH="/usr/local/heroku/bin:$PATH"
+
+# Remove duplicate entries from PATH
+# https://unix.stackexchange.com/a/124517
+PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++' | paste -s -d:)
 
 export EDITOR='vim'
+export PATH
+export MANPATH
 
 # Include .bashrc
 if [ -n "$BASH_VERSION" ]; then
