@@ -80,8 +80,7 @@ fi
 
 ### Misc ###
 
-# Check the window size after each command and, if necessary, update the values
-# of LINES and COLUMNS
+# Check the window size after each command
 shopt -s checkwinsize
 
 # Predictable SSH authentication socket location
