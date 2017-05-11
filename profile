@@ -2,7 +2,7 @@
 
 # Look for GNU coreutils and man pages first
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
 
 # Show hostname in iTerm tab title
 PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'

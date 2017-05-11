@@ -18,6 +18,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+update_path() { case ":${PATH:=$1}:" in *:$1:*) ;; *) PATH="$1:$PATH" ;; esac; }
+
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -60,7 +62,7 @@ if [ -f ~/.ssh/config ]; then
 fi
 
 # Added by the Heroku Toolbelt
-export PATH="$PATH:/usr/local/heroku/bin"
+update_path '/usr/local/heroku/bin'
 
 # Set ls colors
 eval $(dircolors ~/.dircolors)
@@ -79,4 +81,4 @@ export EDITOR='vim'
 source ~/.bin/tmuxinator.bash
 
 # Add ~/bin to PATH for custom scripts
-export PATH="$PATH:$HOME/bin"
+update_path "$HOME/bin"
