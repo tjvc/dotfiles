@@ -1,15 +1,17 @@
 # This file is read by login shells. Use it to for configuration values that
 # apply to the whole session.
 
-# Look for Homebrew-installed GNU coreutils and man pages first
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
-
 # Add ~/bin to PATH for custom scripts
 PATH="$HOME/bin:$PATH"
 
 # Added by the Heroku Toolbelt
 PATH="/usr/local/heroku/bin:$PATH"
+
+# Look for Homebrew-installed GNU coreutils and man pages first
+if which brew > /dev/null; then
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
+fi
 
 # Remove duplicate entries from PATH
 # https://unix.stackexchange.com/a/124517
