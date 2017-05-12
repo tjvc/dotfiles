@@ -41,7 +41,7 @@ if [ -f ~/.ssh/config ]; then
 fi
 
 # Enable tab completion for Homebrew-installed git
-if which brew > /dev/null; then
+if command -v brew &> /dev/null; then
   if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
     . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
   fi
@@ -86,4 +86,7 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
 # Set ls colors
-eval $(dircolors ~/.dircolors)
+command -v dircolors &> /dev/null && eval $(dircolors ~/.dircolors)
+
+# rbenv
+command -v rbenv &> /dev/null && eval "$(rbenv init -)"

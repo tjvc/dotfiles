@@ -8,7 +8,7 @@ PATH="$HOME/bin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
 
 # Look for Homebrew-installed GNU coreutils and man pages first
-if which brew > /dev/null; then
+if command -v brew &> /dev/null; then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
 fi
