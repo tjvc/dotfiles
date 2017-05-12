@@ -27,6 +27,8 @@ Install Vim plugins:
     $ vim +PluginInstall +qall
 ```
 
+**NOTE:** It might be necessary to tell syntastic which Ruby executable to use, see https://superuser.com/a/874550.
+
 ### Ruby
 
 Install the latest stable Ruby with rbenv:
