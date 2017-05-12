@@ -1,58 +1,54 @@
 # dotfiles
 
-Some config files, for customising my Bash environment and a few other things.
+Some config files, primarily for customising my Bash environment and Vim. They're for use on development machines, and intended to be portable between OS X and Ubuntu.
 
 ## Installation
 
 ```bash
-    $ git clone git@github.com:tjvc/dotfiles.git
-    $ bash ~/dotfiles/make-links.sh
+    $ git clone --recursive git@github.com:tjvc/dotfiles.git ~/dotfiles
+    $ bash ~/dotfiles/setup.sh
 ```
 
-Currently `make-links.sh` only symlinks files common to all environments. Files specific to particular environments (`.profile` on OS X, `.gitconfig` for home and work) must be linked manually.
+## OS X development environment
+
+### Homebrew
+
+```bash
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ brew install coreutils node the_silver_searcher tmux
+```
 
 ### Vim
 
-Install Vundle:
+Install Vim plugins:
 
 ```bash
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    $ vim +PluginInstall +qall
 ```
 
-Then launch Vim and run `:PluginInstall`.
+### Ruby
 
-#### vim-livedown
-
-This requires Livedown (<https://github.com/shime/livedown>). To install, first install Node.js, then:
+Install the latest stable Ruby with rbenv:
 
 ```bash
-    $ sudo npm install -g livedown
+    $ brew install rbenv ruby-build
+    $ rbenv install $(rbenv install -l | grep -v - | tail -1)
 ```
 
-#### syntastic
-
-To enable Ruby and JavaScript syntax checking, install RuboCop and JSLint.
-
-##### RuboCop
-
-Assuming RVM is installed:
+#### Gems
 
 ```bash
-    $ gem install rubocop
+    $ gem install bundler rubocop tmuxinator
 ```
 
-##### JSLint
-
-First install Node.js:
+### Other dependencies
 
 ```bash
-    $ sudo apt-get install nodejs nodejs-legacy
+    $ sudo npm install -g jshint
 ```
 
-(On OS X, Node.js can be installed using Homebrew)
+## TODO
 
-Then:
-
-```bash
-    $ sudo npm install -g jslint
-```
+* Collate the above steps in an install script
+* Create a minimal subset of these files for use on servers
