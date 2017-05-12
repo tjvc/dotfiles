@@ -104,7 +104,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Show line numbers
+" Hybrid line numbers
+set relativenumber
 set number
 
 " Show ruler at 80 columns
