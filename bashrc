@@ -54,15 +54,8 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# Set user and hostname color in prompt (red on production servers)
-if [ $(hostname) = *prod* ]; then
-  uh_color='0;31m'
-else
-  uh_color='00;32m'
-fi
-
 # Coloured prompt
-PS1="\[\033[$uh_color\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
+PS1="\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 ### Includes ###
 
