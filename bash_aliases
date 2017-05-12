@@ -28,3 +28,8 @@ alias tm='tmux attach || tmux new'
 
 # grep
 alias grep='grep --color=auto'
+
+# Bundler
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
