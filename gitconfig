@@ -5,3 +5,5 @@
 	templatedir = ~/.git-templates
 [push]
 	default = simple
+[user]
+	name = Thom Carter
