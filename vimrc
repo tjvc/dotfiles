@@ -29,7 +29,6 @@ Plugin 'tpope/vim-unimpaired'
 
 " For specific filetypes/applications
 Plugin 'airblade/vim-gitgutter'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-bundler'
