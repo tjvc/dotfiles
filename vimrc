@@ -55,6 +55,9 @@ nnoremap <Down>  <NOP>
 " Use jj to exit insert mode
 inoremap jj <Esc>
 
+" Disable default command-line window key binding
+nmap q: <NOP>
+
 " statusline
 
 set statusline=%< " where to truncate line if too long
