@@ -15,7 +15,7 @@ Plugin 'chriskempson/base16-vim'
 
 " File navigation
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 
 " Editing
 Plugin 'ervandew/supertab'
@@ -132,3 +132,10 @@ let g:ctrlp_custom_ignore = { 'dir': '\v/vendor$' }
 " MacVim
 set guifont=Menlo\ Regular:h13
 set guioptions=gm
+
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
