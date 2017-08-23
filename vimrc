@@ -94,11 +94,11 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Default checkers are defined in plugin/syntastic/registry.vim
-let g:syntastic_javascript_checkers = [ "jshint" ]
-let g:syntastic_ruby_checkers = [ "mri", "rubocop" ]
+let g:syntastic_javascript_checkers = [ "eslint" ]
+let g:syntastic_ruby_checkers = [ 'rubocop', 'mri', 'reek' ]
+let g:syntastic_haml_checkers  = [ "haml_lint" ]
 
-let g:syntastic_javascript_jslint_args =
-  \ "--white --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars --browser --predef $"
+let g:syntastic_javascript_eslint_exec = "node_modules/.bin/eslint"
 
 " Misc
 
