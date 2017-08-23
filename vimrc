@@ -134,6 +134,9 @@ let g:ctrlp_custom_ignore = { 'dir': '\v/vendor$' }
 set guifont=Menlo\ Regular:h13
 set guioptions=gm
 
+" netrw
+let g:netrw_banner = 0
+
 " Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
