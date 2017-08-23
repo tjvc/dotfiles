@@ -107,8 +107,9 @@ set expandtab
 set relativenumber
 set number
 
-" Show ruler at 80 columns
-set colorcolumn=80
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
 
 " Break lines on word boundaries
 set linebreak
