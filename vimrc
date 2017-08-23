@@ -153,3 +153,6 @@ if executable('ag')
 endif
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+" Enable mouse
+set mouse=a
