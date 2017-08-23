@@ -18,8 +18,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 
 " Editing
-Plugin 'ap/vim-templates'
-Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
@@ -29,13 +27,11 @@ Plugin 'tpope/vim-unimpaired'
 
 " For specific filetypes/applications
 Plugin 'airblade/vim-gitgutter'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
-Plugin 'Valloric/MatchTagAlways'
 
 call vundle#end()
 
