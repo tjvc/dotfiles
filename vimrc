@@ -114,9 +114,6 @@ set colorcolumn=+1
 " Break lines on word boundaries
 set linebreak
 
-" Filetype for .md is Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " HTML indentation
 let g:html_indent_autotags = "html"
 let g:html_indent_inctags = "head,body"
