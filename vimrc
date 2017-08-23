@@ -137,6 +137,10 @@ set guioptions=gm
 " netrw
 let g:netrw_banner = 0
 
+" Open new split panes to bottom and right, which feels more natural
+set splitbelow
+set splitright
+
 " Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
