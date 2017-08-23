@@ -71,21 +71,6 @@ nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
-" statusline
-
-set statusline=%< " where to truncate line if too long
-set statusline+=%f\  " path to the file in the buffer
-set statusline+=%{fugitive#statusline()} " Git branch
-set statusline+=%y " filetype
-set statusline+=[%{&ff}] " file format
-set statusline+=%{strlen(&fenc)?'['.&fenc.']':''} " file encoding
-set statusline+=%r " readonly flag
-set statusline+=%m " modified flag
-set statusline+=%= " separation point between left and right aligned items
-set statusline+=%-14.(%l,%c%V%)\  " line number, column number (left aligned, minimum width 14)
-set statusline+=%P " percentage through file
-set statusline+=\ %{SyntasticStatuslineFlag()}
-
 " syntastic
 
 let g:syntastic_always_populate_loc_list = 1
