@@ -156,3 +156,6 @@ nnoremap <Leader>a :Ack!<Space>
 
 " Enable mouse
 set mouse=a
+
+" Automatically :write before running commands
+set autowrite
