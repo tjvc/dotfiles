@@ -127,9 +127,6 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" Exclude vendor directory from CtrlP results
-let g:ctrlp_custom_ignore = { 'dir': '\v/vendor$' }
-
 " MacVim
 set guifont=Menlo\ Regular:h13
 set guioptions=gm
