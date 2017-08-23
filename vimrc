@@ -32,6 +32,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
