@@ -21,5 +21,12 @@ if defined? Hirb
   Hirb.enable
 end
 
-# Enable tab completion for Rails classes
-Rails.application.eager_load! if defined? Rails
+if defined? Rails
+  # Enable tab completion for Rails classes
+  Rails.application.eager_load!
+
+  # Load Rails console helpers
+  # http://api.rubyonrails.org/classes/Rails/ConsoleMethods.html
+  require 'rails/console/app'
+  extend Rails::ConsoleMethods
+end
