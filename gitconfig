@@ -7,3 +7,5 @@
 	default = current
 [user]
 	name = Thom Carter
+[rerere]
+	enabled = true
