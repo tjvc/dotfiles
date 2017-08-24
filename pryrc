@@ -1,8 +1,4 @@
-begin
-  require 'hirb'
-rescue LoadError => e
-  warn "Failed to load hirb: #{e}"
-end
+begin require 'hirb'; rescue LoadError; end
 
 if defined? Hirb
   # Slightly dirty hack to fully support in-session Hirb.disable/enable toggling
