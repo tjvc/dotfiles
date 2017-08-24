@@ -50,6 +50,14 @@ Install the latest stable Ruby with rbenv:
     $ sudo npm install -g jshint
 ```
 
+### Fish
+
+```bash
+    $ brew install fish
+    $ fish setup.fish
+    $ chsh -s $(which fish)
+```
+
 ## TODO
 
 * Collate the above steps in an install script

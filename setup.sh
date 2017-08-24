@@ -17,3 +17,7 @@ mkdir -p ~/.config
 [ ! -d ~/.config/base16-shell ] && ln -s ~/dotfiles/config/base16-shell ~/.config/base16-shell
 
 source ~/.profile
+
+mkdir -p ~/config.fish
+ln -sf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
+sudo sh -c "echo '/usr/local/bin/fish' >> /etc/shells"
