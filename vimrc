@@ -56,8 +56,8 @@ nnoremap <Down>  <NOP>
 inoremap jj <Esc>
 
 " Disable default command-line window key binding
-nmap q: <NOP>
-
+nnoremap q: <NOP>
+vnoremap q: <NOP>
 
 " test.vim mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
