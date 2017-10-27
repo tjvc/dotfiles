@@ -15,7 +15,7 @@ fi
 
 # Remove duplicate entries from PATH
 # https://unix.stackexchange.com/a/124517
-PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++' | paste -s -d:)
+PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++' | paste -s -d : -)
 
 export EDITOR='vim'
 export PATH
