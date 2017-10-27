@@ -66,19 +66,6 @@ nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
-" syntastic
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-" Default checkers are defined in plugin/syntastic/registry.vim
-let g:syntastic_javascript_checkers = [ "eslint" ]
-let g:syntastic_ruby_checkers = [ 'rubocop', 'mri', 'reek' ]
-let g:syntastic_haml_checkers  = [ "haml_lint" ]
-
-let g:syntastic_javascript_eslint_exec = "node_modules/.bin/eslint"
 
 " Misc
 
