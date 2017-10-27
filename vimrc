@@ -137,6 +137,9 @@ nnoremap <Leader>a :Ack!<Space>
 " Automatically :write before running commands
 set autowrite
 
+" Set shell
+set shell=/bin/bash
+
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
