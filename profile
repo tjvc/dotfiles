@@ -13,6 +13,9 @@ if command -v brew &> /dev/null; then
   MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:"
 fi
 
+# rbenv
+command -v rbenv &> /dev/null && eval "$(rbenv init -)"
+
 # Remove duplicate entries from PATH
 # https://unix.stackexchange.com/a/124517
 PATH=$(printf %s "$PATH" | awk -v RS=: '!a[$0]++' | paste -s -d : -)

@@ -87,6 +87,3 @@ PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"'
 
 # Set ls colors
 command -v dircolors &> /dev/null && eval $(dircolors ~/.dircolors)
-
-# rbenv
-command -v rbenv &> /dev/null && eval "$(rbenv init -)"
