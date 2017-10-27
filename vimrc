@@ -66,6 +66,8 @@ nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
+" Quickly insert debugger
+nmap <Leader>b obinding.pry<ESC>
 
 " Misc
 
