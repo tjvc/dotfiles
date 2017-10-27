@@ -122,10 +122,6 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" MacVim
-set guifont=Menlo\ Regular:h13
-set guioptions=gm
-
 " netrw
 let g:netrw_banner = 0
 
