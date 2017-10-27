@@ -18,6 +18,6 @@ mkdir -p ~/.config
 
 source ~/.profile
 
-mkdir -p ~/config.fish
+mkdir -p ~/.config/fish
 ln -sf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
-sudo sh -c "echo '/usr/local/bin/fish' >> /etc/shells"
+sudo sh -c "grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells"

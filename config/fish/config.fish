@@ -1,3 +1,5 @@
+set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman (manpath | string split ":")
+
 status --is-interactive; and source (rbenv init -|psub)
 
 if status --is-interactive
