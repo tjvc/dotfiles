@@ -27,13 +27,13 @@ Plugin 'tpope/vim-unimpaired'
 
 " For specific filetypes/applications
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 Plugin 'janko-m/vim-test'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -159,3 +159,8 @@ set mouse=a
 
 " Automatically :write before running commands
 set autowrite
+
+let g:ale_lint_on_text_changed="normal"
+let g:ale_lint_on_insert_leave=1
+let g:ale_lint_on_enter=0
+" let g:ale_lint_delay=500
