@@ -41,6 +41,8 @@ call vundle#end()
 
 " Key bindings
 
+let mapleader = " "
+
 " Type :w!! to save file as superuser
 cmap w!! w !sudo tee >/dev/null %
 
