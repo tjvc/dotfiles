@@ -16,6 +16,8 @@ Plugin 'chriskempson/base16-vim'
 " File navigation
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Editing
 Plugin 'ervandew/supertab'
@@ -68,6 +70,13 @@ nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Quickly insert debugger
 nmap <Leader>b obinding.pry<ESC>
+
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>h :History<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :Tags<CR>
+nnoremap <Leader>a :Ag<Space>
 
 " Misc
 
@@ -132,7 +141,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
 
 " Automatically :write before running commands
 set autowrite
