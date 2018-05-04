@@ -46,3 +46,4 @@ if not set -q abbrs_initialized
 
   set -U abbrs_initialized
 end
+set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
