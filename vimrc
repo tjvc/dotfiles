@@ -25,6 +25,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " For specific filetypes/applications
 Plugin 'airblade/vim-gitgutter'
@@ -158,3 +159,6 @@ let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
 
+" splitjoin.vim
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
