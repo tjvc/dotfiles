@@ -14,7 +14,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'chriskempson/base16-vim'
 
 " File navigation
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -142,12 +141,6 @@ if executable('ag')
 
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden --ignore .git -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
 endif
 cnoreabbrev Ack Ack!
 
@@ -165,4 +158,3 @@ let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
 
-let g:ctrlp_extensions = ['tag'] " Search tags with CtrlP
