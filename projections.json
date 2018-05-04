@@ -1,0 +1,58 @@
+{
+  "app/models/*.rb": {
+    "alternate": "test/models/{}_test.rb",
+    "test": "test/models/{}_test.rb",
+    "template": "class {camelcase|capitalize|colons}\nend"
+  },
+  "test/models/*_test.rb": {
+    "command": "modeltest",
+    "template": [
+      "require \"test_helper\"",
+      "",
+      "class {camelcase|capitalize|colons}Test < ActiveSupport::TestCase",
+      "end"
+    ]
+  },
+  "app/presenters/*_presenter.rb": {
+    "alternate": "test/presenters/{}_presenter_test.rb",
+    "test": "test/presenters/{}_presenter_test.rb",
+    "template": "class {camelcase|capitalize|colons}Presenter\nend"
+  },
+  "test/presenters/*_presenter_test.rb": {
+    "command": "presentertest",
+    "template": [
+      "require \"test_helper\"",
+      "",
+      "class {camelcase|capitalize|colons}PresenterTest < ActiveSupport::TestCase",
+      "end"
+    ]
+  },
+  "app/services/*_service.rb": {
+    "alternate": "test/services/{}_service_test.rb",
+    "test": "test/services/{}_service_test.rb",
+    "template": "class {camelcase|capitalize|colons}Service < BaseService\nend"
+  },
+  "test/services/*_service_test.rb": {
+    "command": "servicetest",
+    "template": [
+      "require \"test_helper\"",
+      "",
+      "class {camelcase|capitalize|colons}ServiceTest < ActiveSupport::TestCase",
+      "end"
+    ]
+  },
+  "app/view_models/*_view_model.rb": {
+    "alternate": "test/view_models/{}_view_model_test.rb",
+    "test": "test/view_models/{}_view_model_test.rb",
+    "template": "class {camelcase|capitalize|colons}ViewModel\nend"
+  },
+  "test/view_models/*_view_model_test.rb": {
+    "command": "viewmodeltest",
+    "template": [
+      "require \"test_helper\"",
+      "",
+      "class {camelcase|capitalize|colons}ViewModelTest < ActiveSupport::TestCase",
+      "end"
+    ]
+  }
+}

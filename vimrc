@@ -146,6 +146,8 @@ set autowrite
 set shell=/bin/bash
 let $SUPPRESS_DEPRECATION_WARNINGS = 'true'
 
+set confirm
+
 " Plugin settings
 
 " Colorscheme
