@@ -70,7 +70,7 @@ nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Quickly insert debugger
-nmap <Leader>b obinding.pry<ESC>
+nnoremap <Leader>p obinding.pry<ESC>
 
 " fzf mappings
 nnoremap <leader>f :Files<CR>
