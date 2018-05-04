@@ -3,7 +3,7 @@ set -gx MANPATH /usr/local/opt/coreutils/libexec/gnuman (manpath | string split 
 status --is-interactive; and source (rbenv init -|psub)
 
 if status --is-interactive
-  eval sh $HOME/.config/base16-shell/scripts/base16-default-dark.sh
+  source $HOME/.config/base16-shell/profile_helper.fish
 end
 
 eval (dircolors -c ~/.dircolors)

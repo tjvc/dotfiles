@@ -89,9 +89,10 @@ syntax on
 filetype plugin indent on
 
 " Colorscheme
-set background=dark
-let base16colorspace=256
-colorscheme base16-default-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " Soft tabs, two spaces
 set tabstop=2
