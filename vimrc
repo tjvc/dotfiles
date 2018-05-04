@@ -80,6 +80,12 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>g :Tags<CR>
 nnoremap <Leader>a :Ag<Space>
 
+" Clear buffers
+nnoremap <Leader>x :silent :bufdo bd<CR>
+
+" Reload buffers
+nnoremap <Leader>r :checkt<CR>
+
 " Misc
 
 " Syntax highlighting
