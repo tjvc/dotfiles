@@ -86,19 +86,13 @@ nnoremap <Leader>x :silent :bufdo bd<CR>
 " Reload buffers
 nnoremap <Leader>r :checkt<CR>
 
-" Misc
+" Vim settings
 
 " Syntax highlighting
 syntax on
 
 " Filetype detection, filetype plugins, indent scripts
 filetype plugin indent on
-
-" Colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 
 " Soft tabs, two spaces
 set tabstop=2
@@ -151,6 +145,14 @@ set autowrite
 " Set shell
 set shell=/bin/bash
 let $SUPPRESS_DEPRECATION_WARNINGS = 'true'
+
+" Plugin settings
+
+" Colorscheme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
