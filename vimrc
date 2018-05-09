@@ -130,14 +130,8 @@ let g:netrw_banner = 0
 set splitbelow
 set splitright
 
-" Ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-cnoreabbrev Ack Ack!
+" Use Ag over Grep
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Automatically :write before running commands
 set autowrite
