@@ -160,6 +160,7 @@ let g:ale_linters = {
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
+let g:ale_set_highlights = 0
 
 " splitjoin.vim
 let g:splitjoin_ruby_curly_braces = 0
