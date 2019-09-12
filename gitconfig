@@ -9,3 +9,5 @@
 	name = Thom Carter
 [rerere]
 	enabled = false
+[rebase]
+	autoStash = true
