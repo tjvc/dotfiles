@@ -142,7 +142,6 @@ set autowrite
 
 " Set shell
 set shell=/bin/bash
-let $SUPPRESS_DEPRECATION_WARNINGS = 'true'
 
 set confirm
 
