@@ -148,7 +148,7 @@ set confirm
 
 " Plugin settings
 
-" Colorscheme
+" Use colorscheme set by base16-shell
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
