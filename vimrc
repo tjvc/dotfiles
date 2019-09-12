@@ -110,6 +110,10 @@ set colorcolumn=+1
 " Break lines on word boundaries
 set linebreak
 
+" Use par for paragraph formatting
+" http://vimcasts.org/episodes/formatting-text-with-par/
+set formatprg=par
+
 " HTML indentation
 let g:html_indent_autotags = "html"
 let g:html_indent_inctags = "head,body"
