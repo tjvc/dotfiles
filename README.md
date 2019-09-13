@@ -1,6 +1,6 @@
 # dotfiles
 
-Some config files, primarily for customising my Bash environment and Vim. They're for use on development machines, and intended to be portable between OS X and Ubuntu.
+Some config files, primarily for customising my shell and Vim. They're for use on development machines, and intended to be portable between macOS and Ubuntu.
 
 ## Installation
 
@@ -9,13 +9,13 @@ Some config files, primarily for customising my Bash environment and Vim. They'r
     $ bash ~/dotfiles/setup.sh
 ```
 
-## OS X development environment
+## macOS development environment
 
 ### Homebrew
 
 ```bash
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ brew install coreutils ctags git node the_silver_searcher tmux vim
+    $ brew install coreutils ctags git neovim node par the_silver_searcher tmux vim
 ```
 
 ### Vim
@@ -26,8 +26,6 @@ Install Vim plugins:
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     $ vim +PluginInstall +qall
 ```
-
-**NOTE:** It might be necessary to tell syntastic which Ruby executable to use, see https://superuser.com/a/874550.
 
 ### Ruby
 
@@ -41,13 +39,7 @@ Install the latest stable Ruby with rbenv:
 #### Gems
 
 ```bash
-    $ gem install bundler rubocop tmuxinator
-```
-
-### Other dependencies
-
-```bash
-    $ sudo npm install -g jshint
+    $ gem install bundler rubocop
 ```
 
 ### Fish
@@ -57,8 +49,3 @@ Install the latest stable Ruby with rbenv:
     $ fish setup.fish
     $ chsh -s $(which fish)
 ```
-
-## TODO
-
-* Collate the above steps in an install script
-* Create a minimal subset of these files for use on servers
