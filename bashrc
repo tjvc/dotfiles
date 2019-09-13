@@ -63,9 +63,6 @@ PS1="\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[33m\]\$(parse_git_
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
 [ -s $BASE16_SHELL ] && source $BASE16_SHELL
 
-# tmuxinator
-source ~/.bin/tmuxinator.bash
-
 # .bash_aliases
 if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
