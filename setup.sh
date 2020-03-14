@@ -12,7 +12,6 @@ ln -sf ~/dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 
-[ ! -d ~/.bin ] && ln -s ~/dotfiles/bin ~/.bin
 [ ! -d ~/.git-templates ] && ln -s ~/dotfiles/git-templates ~/.git-templates
 
 mkdir -p ~/.config
