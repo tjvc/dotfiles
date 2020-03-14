@@ -21,28 +21,3 @@ function fish_prompt
   printf ' > '
 end
 
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-
-alias l='ls -CF'
-alias ll='ls -alFh -I ".DS_Store" -I "._*"'
-
-alias less="less -M"
-
-if not set -q abbrs_initialized
-  abbr ga 'git add'
-  abbr gb 'git branch'
-  abbr gc 'git commit -v'
-  abbr gc! 'git commit -v --amend'
-  abbr gco 'git checkout'
-  abbr gd 'git diff'
-  abbr gf 'git fetch'
-  abbr gl 'git pull'
-  abbr gp 'git push'
-  abbr gst 'git status'
-  abbr sc 'bin/rails console'
-  abbr ss 'bin/rails server'
-
-  set -U abbrs_initialized
-end
