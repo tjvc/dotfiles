@@ -2,6 +2,7 @@
 
 ln -sf ~/dotfiles/bash_aliases ~/.bash_aliases
 ln -sf ~/dotfiles/bashrc ~/.bashrc
+ln -sf ~/dotfiles/ctags ~/.ctags
 ln -sf ~/dotfiles/dircolors ~/.dircolors
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
