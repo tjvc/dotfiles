@@ -16,10 +16,9 @@ ln -sf ~/dotfiles/vimrc ~/.vimrc
 
 mkdir -p ~/.config
 [ ! -d ~/.config/base16-shell ] && ln -s ~/dotfiles/config/base16-shell ~/.config/base16-shell
+[ ! -d ~/.config/fish ] && ln -s ~/dotfiles/config/fish ~/.config/fish
 [ ! -d ~/.config/nvim ] && ln -s ~/dotfiles/config/nvim ~/.config/nvim
 
 source ~/.profile
 
-mkdir -p ~/.config/fish
-ln -sf ~/dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 sudo sh -c "grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells"
