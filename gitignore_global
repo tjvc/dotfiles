@@ -9,3 +9,5 @@
 
 # Rails
 config/projections.json
+
+.env.development.local
