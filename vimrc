@@ -38,6 +38,7 @@ Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -189,3 +190,6 @@ highlight ALEWarning ctermbg=none cterm=underline
 " splitjoin.vim
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
+
+" vim-go
+let g:go_bin_path = $HOME."/go/bin"
