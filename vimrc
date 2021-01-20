@@ -1,39 +1,34 @@
-set nocompatible
-filetype off
-
 " Plugins
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin()
 
 " General
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " Colorschemes
-Plugin 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
 " File navigation
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Editing
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " For specific filetypes/applications
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-rails'
-Plugin 'pangloss/vim-javascript'
-Plugin 'janko-m/vim-test'
-Plugin 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rails'
+Plug 'pangloss/vim-javascript'
+Plug 'janko-m/vim-test'
+Plug 'w0rp/ale'
 
-call vundle#end()
+call plug#end()
 
 " Key bindings
 
