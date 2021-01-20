@@ -95,8 +95,9 @@ set expandtab
 set relativenumber
 set number
 
-" Make it obvious where 80 characters is
-set textwidth=80
+" Make it obvious where 120 characters is
+" TODO: Make this project-specific
+set textwidth=120
 set colorcolumn=+1
 
 " Break lines on word boundaries
