@@ -18,6 +18,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 " Development
 Plug 'airblade/vim-gitgutter'
@@ -81,6 +84,9 @@ nnoremap <Leader>r :checkt<CR>
 " Search for current word
 vnoremap <leader>w y:Ag <C-R><C-W><CR>
 noremap <leader>w y1w:Ag <C-R><C-W><CR>
+
+" Use tab for completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Vim settings
 
@@ -149,6 +155,13 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" deoplete
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+  call deoplete#custom#source('_', 'max_menu_width', 200)
+  call deoplete#custom#option('ignore_sources', {'_': ['around']})
+end
 
 " ALE
 let g:ale_lint_on_text_changed="normal"
