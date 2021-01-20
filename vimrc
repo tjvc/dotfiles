@@ -28,6 +28,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
 
 " Language-specific
 Plug 'tpope/vim-rails'
@@ -164,6 +168,15 @@ if has('nvim')
   call deoplete#custom#source('_', 'max_menu_width', 200)
   call deoplete#custom#option('ignore_sources', {'_': ['around']})
 end
+
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+  \ 'javascript': ['typescript-language-server', '--stdio'],
+  \ 'ruby': ['bundle', 'exec', 'solargraph', 'stdio'],
+  \ 'go': ['gopls']
+  \ }
+let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
+let g:LanguageClient_loggingLevel = 'DEBUG'
 
 " ALE
 let g:ale_lint_on_text_changed="normal"
