@@ -32,6 +32,8 @@ Plug 'janko-m/vim-test'
 " Language-specific
 Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
