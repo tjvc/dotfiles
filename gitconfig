@@ -8,6 +8,7 @@
 [user]
 	name = Thom Carter
 [rerere]
-	enabled = false
+	enabled = true
 [rebase]
 	autoStash = true
+	autosquash = true
