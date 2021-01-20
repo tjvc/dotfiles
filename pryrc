@@ -38,6 +38,8 @@ if defined? PryByebug
   Pry.commands.alias_command 'ff', 'finish'
 end
 
+Pry.commands.alias_command 'ww', 'whereami'
+
 # Hit Enter to repeat last command
 Pry::Commands.command /^$/, "repeat last command" do
   _pry_.run_command Pry.history.to_a.last
