@@ -150,14 +150,13 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-
+" ALE
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
-let g:ale_set_highlights = 0
+let g:ale_disable_lsp = 1
+highlight ALEError ctermbg=none cterm=underline
+highlight ALEWarning ctermbg=none cterm=underline
 
 " splitjoin.vim
 let g:splitjoin_ruby_curly_braces = 0
