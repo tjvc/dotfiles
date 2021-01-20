@@ -14,13 +14,10 @@ Plugin 'tpope/vim-sensible'
 Plugin 'chriskempson/base16-vim'
 
 " File navigation
-Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " Editing
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
@@ -29,10 +26,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 
 " For specific filetypes/applications
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 Plugin 'janko-m/vim-test'
