@@ -136,11 +136,6 @@ set autowrite
 " Set shell
 set shell=/bin/bash
 
-" Folding
-set foldmethod=syntax
-" Start with all folds open
-au BufWinEnter * normal zR
-
 set confirm
 
 " Plugin settings
