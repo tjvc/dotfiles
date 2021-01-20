@@ -20,10 +20,3 @@ function fish_prompt
   set_color normal
   printf ' > '
 end
-
-function source_env --on-event fish_preexec
-  if begin test -e '.env.development.local'; and not set -q ENV_SOURCED; end
-    posix-source .env.development.local
-    set -x ENV_SOURCED true
-  end
-end
