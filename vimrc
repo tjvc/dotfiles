@@ -19,14 +19,16 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 
-" For specific filetypes/applications
+" Development
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'w0rp/ale'
+Plug 'janko-m/vim-test'
+
+" Language-specific
 Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
-Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
 
 call plug#end()
 
