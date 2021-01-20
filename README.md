@@ -15,7 +15,7 @@ Some config files, primarily for customising my shell and Vim. They're for use o
 
 ```bash
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ brew install coreutils ctags git neovim node par the_silver_searcher tmux vim
+    $ brew install coreutils ctags fd git neovim node par the_silver_searcher tmux vim
 ```
 
 ### Vim
