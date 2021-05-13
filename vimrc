@@ -77,7 +77,7 @@ nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Quickly insert debugger
-nnoremap <Leader>p obinding.pry<ESC>
+nnoremap <Leader>y obinding.pry<ESC>
 
 " fzf mappings
 nnoremap <leader>f :Files<CR>
@@ -98,6 +98,10 @@ noremap <leader>w y1w:Ag <C-R><C-W><CR>
 
 " Use tab for completion
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Navigate quickfix list
+nnoremap <Leader>n :cnext<CR>
+nnoremap <Leader>p :cprev<CR>
 
 " Vim settings
 
