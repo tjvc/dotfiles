@@ -1,6 +1,6 @@
 # dotfiles
 
-Some config files, primarily for customising my shell and Vim. They're for use on development machines, and intended to be portable between macOS and Ubuntu.
+Config files, primarily for customising my shell and Vim.
 
 ## Installation
 
@@ -14,17 +14,26 @@ Some config files, primarily for customising my shell and Vim. They're for use o
 ### Homebrew
 
 ```bash
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ brew install coreutils ctags fd git neovim node par the_silver_searcher tmux vim
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    $ brew install coreutils ctags fd git neovim par the_silver_searcher tmux vim
 ```
 
-### Vim
+### Vim plugins
 
-Install Vim plugins:
+#### Vim
 
 ```bash
-    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    $ vim +PluginInstall +qall
+    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    $ vim +PlugInstall +qall
+```
+
+#### Neovim
+
+```bash
+    $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    $ nvim +PlugInstall +qall
 ```
 
 ### Ruby
