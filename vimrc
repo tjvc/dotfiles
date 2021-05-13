@@ -161,8 +161,6 @@ set autowrite
 " Set shell
 set shell=/bin/bash
 
-set confirm
-
 " Plugin settings
 
 " Use colorscheme set by base16-shell

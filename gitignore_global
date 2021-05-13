@@ -7,7 +7,4 @@
 ._*
 .DS_Store
 
-# Rails
-config/projections.json
-
 .env.development.local
