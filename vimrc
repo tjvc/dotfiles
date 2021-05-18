@@ -19,10 +19,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'],
-  \ }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 if has('nvim')
@@ -195,8 +191,3 @@ let g:splitjoin_ruby_options_as_arguments = 1
 
 " vim-go
 let g:go_bin_path = $HOME."/go/bin"
-
-" vim-prettier
-let g:prettier#config#print_width = 80
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
