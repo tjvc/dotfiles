@@ -11,6 +11,7 @@ Plug 'chriskempson/base16-vim'
 " File navigation
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'pbrisbin/vim-mkdir'
 
 " Editing
 Plug 'tpope/vim-commentary'
@@ -22,6 +23,8 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'],
   \ }
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
