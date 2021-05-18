@@ -166,10 +166,7 @@ if has('nvim')
 end
 
 " LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-  \ 'ruby': ['bundle', 'exec', 'solargraph', 'stdio'],
-  \ 'go': ['gopls']
-  \ }
+let g:LanguageClient_serverCommands = { 'go': ['gopls'] }
 let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
 let g:LanguageClient_loggingLevel = 'DEBUG'
 
