@@ -47,9 +47,6 @@ call plug#end()
 
 let mapleader = " "
 
-" Type :w!! to save file as superuser
-cmap w!! w !sudo tee >/dev/null %
-
 " Unbind cursor keys
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
