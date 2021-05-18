@@ -2,7 +2,7 @@
 
 ln -sf ~/dotfiles/ctags ~/.ctags
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/gitignore_global ~/.gitignore_global
+ln -sf ~/dotfiles/gitignore_global ~/.gitignore-global
 ln -sf ~/dotfiles/pryrc ~/.pryrc
 ln -sf ~/dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
