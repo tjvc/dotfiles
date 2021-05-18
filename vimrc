@@ -155,6 +155,9 @@ set autowrite
 " Set shell
 set shell=/bin/bash
 
+" Underline search matches
+highlight Search ctermbg=none ctermfg=none cterm=underline
+
 " Plugin settings
 
 " Use colorscheme set by base16-shell
