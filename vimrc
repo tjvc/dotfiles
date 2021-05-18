@@ -39,9 +39,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " Language-specific
 Plug 'tpope/vim-rails'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'fatih/vim-go'
 
 call plug#end()
@@ -178,7 +175,6 @@ end
 
 " LanguageClient-neovim
 let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['typescript-language-server', '--stdio'],
   \ 'ruby': ['bundle', 'exec', 'solargraph', 'stdio'],
   \ 'go': ['gopls']
   \ }
