@@ -119,10 +119,12 @@ set linebreak
 set formatprg=par
 
 " HTML indentation
+" TODO: Review
 let g:html_indent_autotags = "html"
 let g:html_indent_inctags = "head,body"
 
 " Remove trailing whitespace on write
+" TODO: Replace with ALE fixer?
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -171,6 +173,7 @@ let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
 let g:LanguageClient_loggingLevel = 'DEBUG'
 
 " ALE
+" TODO: Review these settings
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
