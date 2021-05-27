@@ -15,7 +15,16 @@ Config files, primarily for customising my shell and Vim.
 
 ```bash
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    $ brew install coreutils ctags fd git neovim par the_silver_searcher tmux vim
+    $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/thom/.zprofile
+    $ eval "$(/opt/homebrew/bin/brew shellenv)"
+    $ brew install coreutils ctags fd fish git neovim par the_silver_searcher tmux vim
+```
+
+### Fish
+
+```bash
+    $ fish setup.fish
+    $ chsh -s $(which fish)
 ```
 
 ### Vim plugins
@@ -33,6 +42,8 @@ Config files, primarily for customising my shell and Vim.
 ```bash
     $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    $ brew install rust # Required by LanguageClient-neovim
+    $ python3 -m pip install --user --upgrade pynvim
     $ nvim +PlugInstall +qall
 ```
 
@@ -42,19 +53,11 @@ Install the latest stable Ruby with rbenv:
 
 ```bash
     $ brew install rbenv ruby-build
-    $ rbenv install $(rbenv install -l | grep -v - | tail -1)
+    $ rbenv install (rbenv install -l | grep -v - | tail -1)
 ```
 
 #### Gems
 
 ```bash
     $ gem install bundler rubocop
-```
-
-### Fish
-
-```bash
-    $ brew install fish
-    $ fish setup.fish
-    $ chsh -s $(which fish)
 ```
