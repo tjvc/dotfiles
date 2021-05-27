@@ -6,8 +6,6 @@ if status --is-interactive
   source $HOME/.config/base16-shell/profile_helper.fish
 end
 
-eval (dircolors -c ~/.dircolors)
-
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_char_dirtystate '*'
 set __fish_git_prompt_char_stateseparator ''
