@@ -2,9 +2,7 @@ if status --is-interactive && type -q rbenv
   source (rbenv init -|psub)
 end
 
-if status --is-interactive
-  source $HOME/.config/base16-shell/profile_helper.fish
-end
+status --is-interactive; and source (nodenv init -|psub)
 
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_char_dirtystate '*'
