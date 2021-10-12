@@ -5,6 +5,9 @@ call plug#begin()
 " General
 Plug 'tpope/vim-sensible'
 
+" Colorschemes
+Plug 'chriskempson/base16-vim'
+
 " File navigation
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -150,6 +153,12 @@ set shell=/bin/bash
 highlight Search ctermbg=none ctermfg=none cterm=underline
 
 " Plugin settings
+
+" Use colorscheme set by base16-shell
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " deoplete
 if has('nvim')
