@@ -3,6 +3,7 @@
 	excludesfile = ~/.gitignore-global
 [init]
 	templatedir = ~/.git-templates
+	defaultBranch = main
 [push]
 	default = current
 [user]
