@@ -15,4 +15,4 @@ mkdir -p ~/.config
 [ ! -d ~/.config/fish ] && ln -s ~/dotfiles/config/fish ~/.config/fish
 [ ! -d ~/.config/nvim ] && ln -s ~/dotfiles/config/nvim ~/.config/nvim
 
-sudo sh -c "grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells"
+sudo sh -c "grep -q -F '/opt/homebrew/bin/fish' /etc/shells || echo '/opt/homebrew/bin/fish' >> /etc/shells"
