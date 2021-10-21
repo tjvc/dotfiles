@@ -2,9 +2,12 @@
 *~
 *.swp
 *.swo
+tags
 
 # OS X
 ._*
 .DS_Store
 
 .env.development.local
+
+.vscode
