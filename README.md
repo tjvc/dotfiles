@@ -17,7 +17,7 @@ Config files, primarily for customising my shell and Vim.
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/thom/.zprofile
     $ eval "$(/opt/homebrew/bin/brew shellenv)"
-    $ brew install coreutils ctags fd fish git neovim par the_silver_searcher tmux vim
+    $ brew bundle
 ```
 
 ### Fish
