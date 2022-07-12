@@ -21,6 +21,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'github/copilot.vim'
 
 " Development
 Plug 'airblade/vim-gitgutter'
