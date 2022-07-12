@@ -34,6 +34,8 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
 
 " Language-specific
 Plug 'tpope/vim-rails'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'fatih/vim-go'
 
 call plug#end()
