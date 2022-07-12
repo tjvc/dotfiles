@@ -20,9 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-endwise'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Development
 Plug 'airblade/vim-gitgutter'
@@ -162,11 +160,9 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " deoplete
-if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-  call deoplete#custom#source('_', 'max_menu_width', 200)
-  call deoplete#custom#option('ignore_sources', {'_': ['around']})
-end
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('_', 'max_menu_width', 200)
+call deoplete#custom#option('ignore_sources', {'_': ['around']})
 
 " LanguageClient-neovim
 let g:LanguageClient_serverCommands = { 'go': ['gopls'] }

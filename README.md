@@ -28,17 +28,7 @@ Config files, primarily for customising my shell and Vim.
     $ chsh -s $(which fish)
 ```
 
-### Vim plugins
-
-#### Vim
-
-```bash
-    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    $ vim +PlugInstall +qall
-```
-
-#### Neovim
+### Neovim
 
 ```bash
     $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
