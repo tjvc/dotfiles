@@ -2,6 +2,10 @@ if status --is-interactive && type -q rbenv
   source (rbenv init -|psub)
 end
 
+if status --is-interactive && type -q nodenv
+  source (nodenv init -|psub)
+end
+
 if status --is-interactive
   source $HOME/.config/base16-shell/profile_helper.fish
 end
