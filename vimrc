@@ -19,7 +19,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
