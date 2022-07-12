@@ -59,5 +59,5 @@ Install the latest stable Ruby with rbenv:
 #### Gems
 
 ```bash
-    $ gem install bundler rubocop
+    $ gem install bundler standard
 ```
