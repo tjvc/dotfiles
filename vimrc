@@ -28,7 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 " Language-specific
 Plug 'tpope/vim-rails'
@@ -87,6 +86,10 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 
 " Use tab for completion
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" LSP
+nnoremap gd :ALEGoToDefinition<CR>
+nnoremap gr :ALEFindReferences<CR>
 
 " Vim settings
 
@@ -161,22 +164,16 @@ endif
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('_', 'max_menu_width', 200)
-call deoplete#custom#option('ignore_sources', {'_': ['around']})
-
-" LanguageClient-neovim
-let g:LanguageClient_serverCommands = { 'go': ['gopls'] }
-let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
-let g:LanguageClient_loggingLevel = 'DEBUG'
+call deoplete#custom#option('sources', {'_': ['ale', 'buffer', 'tag']})
 
 " ALE
 " TODO: Review these settings
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=0
-let g:ale_disable_lsp = 1
 highlight ALEError ctermbg=none cterm=underline
 highlight ALEWarning ctermbg=none cterm=underline
+let g:ale_completion_autoimport = 1
 
 " splitjoin.vim
 let g:splitjoin_ruby_curly_braces = 0
