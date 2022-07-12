@@ -24,6 +24,7 @@ Config files, primarily for customising my shell and Vim.
 
 ```bash
     $ fish setup.fish
+    $ sudo sh -c "echo '/opt/homebrew/bin/fish' >> /etc/shells"
     $ chsh -s $(which fish)
 ```
 
