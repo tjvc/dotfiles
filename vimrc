@@ -119,6 +119,9 @@ set linebreak
 " http://vimcasts.org/episodes/formatting-text-with-par/
 set formatprg=par
 
+" Disable search highlighting
+set nohlsearch
+
 " HTML indentation
 " TODO: Review
 let g:html_indent_autotags = "html"
