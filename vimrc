@@ -80,12 +80,12 @@ nnoremap <Leader>a :Ag<Space>
 " Clear buffers
 nnoremap <Leader>x :silent :bufdo bd<CR>
 
-" Reload buffers
-nnoremap <Leader>r :checkt<CR>
-
 " Search for current word
 vnoremap <leader>w y:Ag <C-R><C-W><CR>
 noremap <leader>w y1w:Ag <C-R><C-W><CR>
+
+" Replace current word
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 
 " Use tab for completion
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
