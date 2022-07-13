@@ -166,6 +166,8 @@ endif
 " deoplete
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('sources', {'_': ['ale', 'buffer', 'tag']})
+" Close preview window when completion is done
+autocmd CompleteDone * silent! pclose!
 
 " ALE
 " TODO: Review these settings
