@@ -170,6 +170,10 @@ call deoplete#custom#option('sources', {'_': ['ale', 'buffer', 'tag']})
 autocmd CompleteDone * silent! pclose!
 
 " ALE
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 let g:ale_completion_autoimport = 1
 
 " splitjoin.vim
