@@ -170,12 +170,6 @@ call deoplete#custom#option('sources', {'_': ['ale', 'buffer', 'tag']})
 autocmd CompleteDone * silent! pclose!
 
 " ALE
-" TODO: Review these settings
-let g:ale_lint_on_text_changed="normal"
-let g:ale_lint_on_insert_leave=1
-let g:ale_lint_on_enter=0
-highlight ALEError ctermbg=none cterm=underline
-highlight ALEWarning ctermbg=none cterm=underline
 let g:ale_completion_autoimport = 1
 
 " splitjoin.vim
