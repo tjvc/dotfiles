@@ -17,6 +17,7 @@ Config files, primarily for customising my shell and Vim.
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/thom/.zprofile
     $ eval "$(/opt/homebrew/bin/brew shellenv)"
+    $ sudo softwareupdate --install-rosetta
     $ brew bundle
 ```
 
@@ -24,7 +25,6 @@ Config files, primarily for customising my shell and Vim.
 
 ```bash
     $ fish setup.fish
-    $ sudo sh -c "echo '/opt/homebrew/bin/fish' >> /etc/shells"
     $ chsh -s $(which fish)
 ```
 
@@ -39,11 +39,11 @@ Config files, primarily for customising my shell and Vim.
 
 ### Ruby
 
-Install the latest stable Ruby with rbenv:
+Install the latest stable Ruby with asdf:
 
 ```bash
-    $ brew install rbenv ruby-build
-    $ rbenv install (rbenv install -l | grep -v - | tail -1)
+    $ asdf plugin add ruby
+    $ asdf install ruby latest
 ```
 
 #### Gems

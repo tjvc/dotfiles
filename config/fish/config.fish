@@ -1,9 +1,5 @@
-if status --is-interactive && type -q rbenv
-  source (rbenv init -|psub)
-end
-
-if status --is-interactive && type -q nodenv
-  source (nodenv init -|psub)
+if status --is-interactive && type -q asdf
+  source (brew --prefix asdf)/libexec/asdf.fish
 end
 
 if status --is-interactive
