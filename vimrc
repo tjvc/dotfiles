@@ -23,6 +23,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'github/copilot.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
 
 " Development
 Plug 'airblade/vim-gitgutter'
