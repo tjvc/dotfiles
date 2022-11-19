@@ -38,6 +38,7 @@ Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -170,6 +171,7 @@ autocmd CompleteDone * silent! pclose!
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \}
+let g:ale_linters = {'rust': ['analyzer']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_autoimport = 1
 
