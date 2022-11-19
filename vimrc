@@ -7,6 +7,7 @@ Plug 'tpope/vim-sensible'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Colorschemes
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " File navigation
 Plug 'junegunn/fzf'
@@ -177,6 +178,15 @@ let g:splitjoin_ruby_options_as_arguments = 1
 
 " vim-go
 let g:go_bin_path = $HOME."/go/bin"
+
+let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+
+lua << EOF
+require("catppuccin").setup()
+EOF
+
+set termguicolors
+colorscheme catppuccin
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
