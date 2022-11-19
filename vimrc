@@ -6,7 +6,6 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 
 " Colorschemes
-Plug 'chriskempson/base16-vim'
 
 " File navigation
 Plug 'junegunn/fzf'
@@ -156,12 +155,6 @@ set autowrite
 highlight Search ctermbg=none ctermfg=none cterm=underline
 
 " Plugin settings
-
-" Use colorscheme set by base16-shell
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
