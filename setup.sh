@@ -13,6 +13,7 @@ ln -sf ~/dotfiles/Brewfile ~/Brewfile
 [ ! -d ~/bin ] && ln -s ~/dotfiles/bin ~/bin
 
 mkdir -p ~/.config
+[ ! -d ~/.config/alacritty ] && ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
 [ ! -d ~/.config/fish ] && ln -s ~/dotfiles/config/fish ~/.config/fish
 [ ! -d ~/.config/nvim ] && ln -s ~/dotfiles/config/nvim ~/.config/nvim
 
