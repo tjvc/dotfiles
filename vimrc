@@ -5,6 +5,7 @@ call plug#begin()
 " General
 Plug 'tpope/vim-sensible'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'jamessan/vim-gnupg'
 
 " Colorschemes
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
