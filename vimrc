@@ -160,6 +160,9 @@ set autowrite
 " Underline search matches
 highlight Search ctermbg=none ctermfg=none cterm=underline
 
+" Highlight current line
+set cursorline
+
 " Plugin settings
 
 " deoplete
