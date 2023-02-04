@@ -17,7 +17,6 @@ Config files, primarily for customising my shell and Vim.
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/thom/.zprofile
     $ eval "$(/opt/homebrew/bin/brew shellenv)"
-    $ sudo softwareupdate --install-rosetta
     $ brew bundle
 ```
 
