@@ -24,7 +24,6 @@ Config files, primarily for customising my shell and Vim.
 ### Fish
 
 ```bash
-    $ fish setup.fish
     $ chsh -s $(which fish)
 ```
 
