@@ -8,6 +8,7 @@ ln -sf ~/dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/Brewfile ~/Brewfile
+ln -sf ~/dotfiles/asdfrc ~/.asdfrc
 
 [ ! -d ~/.git-templates ] && ln -s ~/dotfiles/git-templates ~/.git-templates
 [ ! -d ~/bin ] && ln -s ~/dotfiles/bin ~/bin
