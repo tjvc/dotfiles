@@ -5,7 +5,7 @@ brew "fd"
 brew "fish"
 brew "fzf"
 brew "git"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "par"
 brew "postgresql"
 brew "python3"
