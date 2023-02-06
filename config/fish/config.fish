@@ -26,3 +26,5 @@ set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info"
 if status --is-interactive && type -q asdf
   source (brew --prefix asdf)/libexec/asdf.fish
 end
+
+fish_add_path ~/bin
