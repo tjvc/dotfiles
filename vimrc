@@ -129,6 +129,9 @@ set formatprg=par
 " Disable search highlighting
 set nohlsearch
 
+" Load trusted local config files
+set exrc
+
 " HTML indentation
 " TODO: Review
 let g:html_indent_autotags = "html"
