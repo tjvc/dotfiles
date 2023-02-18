@@ -3,6 +3,7 @@
 *.swp
 *.swo
 tags
+.nvim.lua
 
 # OS X
 ._*
