@@ -3,6 +3,7 @@ brew "coreutils"
 brew "ctags"
 brew "fd"
 brew "fish"
+brew "flock"
 brew "fzf"
 brew "git"
 brew "neovim", args: ["HEAD"]
