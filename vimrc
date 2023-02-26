@@ -166,6 +166,9 @@ highlight Search ctermbg=none ctermfg=none cterm=underline
 " Highlight current line
 set cursorline
 
+" Disable mouse
+set mouse=
+
 " Plugin settings
 
 " deoplete
