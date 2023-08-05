@@ -14,7 +14,6 @@ end
 
 set -gx EDITOR vim
 set -gx FZF_DEFAULT_COMMAND fd --type f
-set -gx FZF_PREVIEW_COMMAND cat {}
 
 set -gx HOMEBREW_PREFIX "/opt/homebrew";
 set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";

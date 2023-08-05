@@ -31,7 +31,6 @@ Config files, primarily for customising my shell and Vim.
 ```bash
     $ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    $ python3 -m pip install --user --upgrade pynvim
     $ nvim +PlugInstall +qall
 ```
 

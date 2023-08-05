@@ -6,14 +6,14 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jamessan/vim-gnupg'
+Plug 'nvim-lua/plenary.nvim'
 
 " Colorschemes
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " File navigation
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 " Editing
 Plug 'tpope/vim-commentary'
@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-endwise'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'github/copilot.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -31,8 +30,16 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
+Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'mxsdev/nvim-dap-vscode-js'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " Language-specific
 Plug 'tpope/vim-rails'
@@ -73,29 +80,11 @@ nnoremap <silent> <Leader>gt :TestVisit<CR>
 " Quickly insert debugger
 nnoremap <Leader>p obinding.pry<ESC>
 
-" fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>h :History<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>g :Tags<CR>
-nnoremap <Leader>a :Ag<Space>
-
 " Clear buffers
 nnoremap <Leader>x :silent :bufdo bd<CR>
 
-" Search for current word
-vnoremap <leader>w y:Ag <C-R><C-W><CR>
-noremap <leader>w y1w:Ag <C-R><C-W><CR>
-
 " Replace current word
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
-
-" Use tab for completion
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" LSP
-nnoremap gd :ALEGoToDefinition<CR>
-nnoremap gr :ALEFindReferences<CR>
 
 " Remap macro key
 nnoremap Q q
@@ -175,21 +164,6 @@ set mouse=
 
 " Plugin settings
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('sources', {'_': ['ale', 'buffer', 'tag']})
-" Close preview window when completion is done
-autocmd CompleteDone * silent! pclose!
-
-" ALE
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\}
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_fix_on_save = 1
-let g:ale_completion_autoimport = 1
-
 " splitjoin.vim
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
@@ -241,4 +215,152 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+-- Set up nvim-cmp
+local cmp = require'cmp'
+
+cmp.setup({
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
+-- Set up lspconfig
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Set up language servers
+local lspconfig = require('lspconfig')
+
+lspconfig.tsserver.setup { capabilities = capabilities }
+-- lspconfig.ruby_ls.setup { capabilities = capabilities }
+
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist)
+
+-- Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>o', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+
+    -- Don't use tsserver for formatting
+    -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+    -- TODO: Shows a warning on Neovim open
+    vim.lsp.buf.format {
+      filter = function(client) return client.name ~= 'tsserver' end
+    }
+  end,
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+ vim.lsp.handlers.hover, {
+   -- Set border for hover
+   border = "single",
+ }
+)
+
+vim.diagnostic.config {
+  -- Set border for diagnostic floating windows
+  float = { border = "single" },
+}
+
+-- null-ls
+-- Integrate linters, formatters etc. with Neovim's LSP client
+-- This plugin is being archived: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621
+local null_ls = require("null-ls")
+local sources = {
+    null_ls.builtins.formatting.prettier.with({
+        prefer_local = "node_modules/.bin",
+    }),
+    null_ls.builtins.diagnostics.eslint.with({
+        prefer_local = "node_modules/.bin",
+    }),
+    null_ls.builtins.diagnostics.rubocop
+}
+null_ls.setup({ sources = sources })
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>w', builtin.grep_string, {})
+vim.keymap.set('n', '<leader>a', function() builtin.grep_string({ search = vim.fn.input(">") }) end)
+vim.keymap.set('n', '<leader>g', builtin.tags, {})
+
+require('telescope').setup{
+  defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    mappings = {
+      i = {
+        -- map actions.which_key to <C-h> (default: <C-/>)
+        -- actions.which_key shows the mappings for your picker,
+        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+        ["<Esc>"] = "close"
+      }
+    }
+  },
+  pickers = {
+    buffers = {
+      ignore_current_buffer = true,
+      sort_mru = true
+    }
+  }
+}
+
 EOF
