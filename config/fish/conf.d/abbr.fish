@@ -30,5 +30,7 @@ abbr -a rc 'git rebase --continue'
 abbr -a rim 'git rebase -i origin/main'
 abbr -a sc 'bin/rails console'
 abbr -a ss 'bin/rails server'
+abbr -a t 'tmux'
+abbr -a tkr 'tmux kill-server'
 abbr -a ts tmux-sessionizer
 abbr -a y yarn
