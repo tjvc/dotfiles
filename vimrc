@@ -97,6 +97,10 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap gd :ALEGoToDefinition<CR>
 nnoremap gr :ALEFindReferences<CR>
 
+" Remap macro key
+nnoremap Q q
+nnoremap q <Nop>
+
 " Vim settings
 
 " Syntax highlighting
