@@ -129,6 +129,8 @@ set nohlsearch
 " TODO: Is this needed now we have .nvim.lua?
 set exrc
 
+set noswapfile
+
 " HTML indentation
 " TODO: Review
 let g:html_indent_autotags = "html"
