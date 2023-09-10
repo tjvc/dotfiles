@@ -3,7 +3,7 @@
 call plug#begin()
 
 " General
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible' " TODO: Do I need this?
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jamessan/vim-gnupg'
 Plug 'nvim-lua/plenary.nvim'
@@ -16,6 +16,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 " Editing
+" TODO: Review these tpope plugins
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -29,7 +30,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 " Development
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb' " TODO: What is this?
 Plug 'janko-m/vim-test'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -43,6 +44,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 " Language-specific
 Plug 'tpope/vim-rails'
+" TODO: Review these JS plugins
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'fatih/vim-go'
@@ -75,6 +77,7 @@ vnoremap q: <NOP>
 nnoremap <silent> <Leader>t :TestFile<CR>
 nnoremap <silent> <Leader>s :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
+" TODO: What is this?
 nnoremap <silent> <Leader>gt :TestVisit<CR>
 
 " Quickly insert debugger
@@ -123,6 +126,7 @@ set formatprg=par
 set nohlsearch
 
 " Load trusted local config files
+" TODO: Is this needed now we have .nvim.lua?
 set exrc
 
 " HTML indentation
@@ -131,7 +135,7 @@ let g:html_indent_autotags = "html"
 let g:html_indent_inctags = "head,body"
 
 " Remove trailing whitespace on write
-" TODO: Replace with ALE fixer?
+" TODO: Is this still the best approach?
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
