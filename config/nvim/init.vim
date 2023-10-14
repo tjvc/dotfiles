@@ -266,6 +266,7 @@ local lspconfig = require('lspconfig')
 
 lspconfig.tsserver.setup { capabilities = capabilities }
 -- lspconfig.ruby_ls.setup { capabilities = capabilities }
+lspconfig.gopls.setup { capabilities = capabilities }
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
