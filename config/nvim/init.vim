@@ -295,16 +295,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>o', function()
-      vim.lsp.buf.format { async = true }
+      vim.lsp.buf.format {
+        -- Don't use tsserver for formatting
+        -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
+        -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+        async = true,
+        filter = function(client) return client.name ~= 'tsserver' end
+      }
     end, opts)
-
-    -- Don't use tsserver for formatting
-    -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
-    -- TODO: Shows a warning on Neovim open
-    vim.lsp.buf.format {
-      filter = function(client) return client.name ~= 'tsserver' end
-    }
   end,
 })
 
