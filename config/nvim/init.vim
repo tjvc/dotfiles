@@ -316,6 +316,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 vim.diagnostic.config {
   -- Set border for diagnostic floating windows
   float = { border = "single" },
+  virtual_text = false,
 }
 
 -- null-ls
