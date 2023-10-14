@@ -395,7 +395,8 @@ end
 -- https://github.com/mfussenegger/nvim-dap/issues/714
 -- TODO: Confirm that this is 1) working, 2) necessary
 vim.g.copilot_filetypes = {
-  { dap_repl = false }
+  dap_repl = false
 }
+
 
 EOF
