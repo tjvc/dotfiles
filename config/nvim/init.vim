@@ -6,7 +6,6 @@ let &packpath = &runtimepath
 call plug#begin()
 
 " General
-Plug 'tpope/vim-sensible' " TODO: Do I need this?
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jamessan/vim-gnupg'
 Plug 'nvim-lua/plenary.nvim'
@@ -19,7 +18,6 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 " Editing
-" TODO: Review these tpope plugins
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -33,7 +31,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 " Development
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb' " TODO: What is this?
+Plug 'tpope/vim-rhubarb'
 Plug 'janko-m/vim-test'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -47,9 +45,6 @@ Plug 'hrsh7th/nvim-cmp'
 
 " Language-specific
 Plug 'tpope/vim-rails'
-" TODO: Review these JS plugins
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 
