@@ -1,12 +1,6 @@
 runtime plug.vim
 runtime map.vim
 
-" Syntax highlighting
-syntax on
-
-" Filetype detection, filetype plugins, indent scripts
-filetype plugin indent on
-
 " Soft tabs, two spaces
 set tabstop=2
 set shiftwidth=2
@@ -17,7 +11,6 @@ set relativenumber
 set number
 
 " Make it obvious where 120 characters is
-" TODO: Make this project-specific
 set textwidth=120
 set colorcolumn=+1
 
@@ -32,18 +25,11 @@ set formatprg=par
 set nohlsearch
 
 " Load trusted local config files
-" TODO: Is this needed now we have .nvim.lua?
 set exrc
 
 set noswapfile
 
-" HTML indentation
-" TODO: Review
-let g:html_indent_autotags = "html"
-let g:html_indent_inctags = "head,body"
-
 " Remove trailing whitespace on write
-" TODO: Is this still the best approach?
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -59,14 +45,8 @@ let g:netrw_banner = 0
 set splitbelow
 set splitright
 
-" Use Ag over Grep
-set grepprg=ag\ --nogroup\ --nocolor
-
 " Automatically :write before running commands
 set autowrite
-
-" Underline search matches
-highlight Search ctermbg=none ctermfg=none cterm=underline
 
 " Highlight current line
 set cursorline
