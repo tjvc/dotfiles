@@ -22,6 +22,11 @@ set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbi
 set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
 set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
 
+# Prevent ASDF from setting fish_user_paths as a global variable
+# https://github.com/asdf-vm/asdf/issues/1629
+fish_add_path "$ASDF_DIR/bin"
+fish_add_path "$HOME/.asdf/shims"
+
 if status --is-interactive && type -q asdf
   source (brew --prefix asdf)/libexec/asdf.fish
 end
