@@ -108,14 +108,3 @@ set cursorline
 
 " Disable mouse
 set mouse=
-
-" Plugin settings
-
-let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
-
-lua << EOF
-require("catppuccin").setup()
-EOF
-
-set termguicolors
-colorscheme catppuccin
