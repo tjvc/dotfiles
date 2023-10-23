@@ -21,13 +21,6 @@ inoremap jj <Esc>
 nnoremap q: <NOP>
 vnoremap q: <NOP>
 
-" test.vim mappings
-nnoremap <silent> <Leader>t :TestFile<CR>
-nnoremap <silent> <Leader>s :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-" TODO: What is this?
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-
 " Quickly insert debugger
 nnoremap <Leader>p obinding.pry<ESC>
 
