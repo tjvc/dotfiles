@@ -111,9 +111,6 @@ set mouse=
 
 " Plugin settings
 
-" vim-go
-let g:go_bin_path = $HOME."/go/bin"
-
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 
 lua << EOF

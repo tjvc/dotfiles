@@ -40,7 +40,5 @@ Plug 'hrsh7th/nvim-cmp'
 
 " Language-specific
 Plug 'tpope/vim-rails'
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
