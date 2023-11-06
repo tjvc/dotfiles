@@ -32,3 +32,6 @@ if status --is-interactive && type -q asdf
 end
 
 fish_add_path ~/bin
+
+# https://github.com/asdf-vm/asdf-nodejs#partial-and-codename-versions
+set -Ux ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
