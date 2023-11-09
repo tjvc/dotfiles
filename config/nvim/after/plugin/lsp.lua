@@ -43,6 +43,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         filter = function(client) return client.name ~= 'tsserver' end
       }
     end, opts)
+
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client.server_capabilities.definitionProvider then
+      vim.bo[ev.buf].tagfunc = "v:lua.vim.lsp.tagfunc"
+    end
   end,
 })
 

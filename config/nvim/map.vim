@@ -29,3 +29,5 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " Remap macro key
 nnoremap Q q
 nnoremap q <Nop>
+
+nnoremap <C-]> :tjump<CR>
