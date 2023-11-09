@@ -3,6 +3,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
 lspconfig.tsserver.setup { capabilities = capabilities }
+-- Requires additional config
+-- https://github.com/Shopify/ruby-lsp/pull/830
 -- lspconfig.ruby_ls.setup { capabilities = capabilities }
 lspconfig.gopls.setup { capabilities = capabilities }
 
