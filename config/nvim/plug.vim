@@ -37,6 +37,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 " Language-specific
 Plug 'tpope/vim-rails'
