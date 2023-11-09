@@ -53,3 +53,5 @@ set cursorline
 
 " Disable mouse
 set mouse=
+
+set scrolloff=16
