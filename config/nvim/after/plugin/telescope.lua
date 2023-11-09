@@ -18,7 +18,8 @@ require('telescope').setup{
         ["<C-k>"] = "move_selection_previous",
         ["<Esc>"] = "close"
       }
-    }
+    },
+    scroll_strategy = "limit",
   },
   pickers = {
     buffers = {
