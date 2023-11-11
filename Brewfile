@@ -12,7 +12,7 @@ brew "postgresql"
 brew "python3"
 brew "redis"
 brew "the_silver_searcher"
-brew "tmux"
+brew "tmux", args: ["HEAD"]
 
 cask "alacritty"
 cask "1password"
