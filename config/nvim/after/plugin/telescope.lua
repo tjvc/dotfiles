@@ -4,6 +4,7 @@ vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>w', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>a', function() builtin.grep_string({ search = vim.fn.input(">") }) end)
 vim.keymap.set('n', '<leader>g', builtin.tags, {})
+vim.keymap.set('n', '<leader>h', builtin.oldfiles, {})
 
 require('telescope').setup{
   defaults = {
