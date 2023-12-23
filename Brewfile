@@ -1,6 +1,5 @@
 brew "awscli"
 brew "coreutils"
-brew "ctags"
 brew "fd"
 brew "fish"
 brew "flock"
@@ -13,6 +12,7 @@ brew "python3"
 brew "redis"
 brew "the_silver_searcher"
 brew "tmux", args: ["HEAD"]
+brew "universal-ctags"
 
 cask "alacritty"
 cask "1password"

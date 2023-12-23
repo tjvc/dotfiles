@@ -44,9 +44,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
       }
     end, opts)
 
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client.server_capabilities.definitionProvider then
-      vim.bo[ev.buf].tagfunc = "v:lua.vim.lsp.tagfunc"
+    if vim.bo.filetype == 'ruby' then
+      vim.keymap.set('n', 'gd', ':tjump <C-R><C-W><CR>', opts)
     end
   end,
 })
