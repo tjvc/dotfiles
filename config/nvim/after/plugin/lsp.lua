@@ -77,3 +77,8 @@ local sources = {
     null_ls.builtins.diagnostics.rubocop
 }
 null_ls.setup({ sources = sources })
+
+local signs = { 'DiagnosticSignError', 'DiagnosticSignWarn', 'DiagnosticSignHint', 'DiagnosticSignInfo' }
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign, { texthl = sign, text = '•', numhl = '' })
+end
