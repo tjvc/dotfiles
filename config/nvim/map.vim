@@ -17,9 +17,6 @@ inoremap jj <Esc>
 nnoremap q: <NOP>
 vnoremap q: <NOP>
 
-" Quickly insert debugger
-nnoremap <Leader>p obinding.pry<ESC>
-
 " Clear buffers
 nnoremap <Leader>x :silent :bufdo bd<CR>
 
