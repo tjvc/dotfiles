@@ -21,6 +21,7 @@ require('telescope').setup{
       }
     },
     scroll_strategy = "limit",
+    path_display = { "truncate" },
   },
   pickers = {
     buffers = {
