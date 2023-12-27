@@ -7,6 +7,30 @@ lspconfig.tsserver.setup { capabilities = capabilities }
 -- https://github.com/Shopify/ruby-lsp/pull/830
 -- lspconfig.ruby_ls.setup { capabilities = capabilities }
 lspconfig.gopls.setup { capabilities = capabilities }
+lspconfig.lua_ls.setup(
+  {
+    cmd = {
+      -- Work around Homebrew multi-user permissions
+      'lua-language-server',
+      '--logpath=/tmp/lua-language-server/log',
+      '--metapath=/tmp/lua-language-server/meta',
+    },
+    capabilities = capabilities,
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { 'vim' },
+        },
+        format = {
+          defaultConfig = {
+            quote_style = 'single',
+            trailing_table_separator = 'smart',
+          }
+        }
+      }
+    }
+  }
+)
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
