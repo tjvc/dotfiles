@@ -1,6 +1,8 @@
 font:
   family: Monaco
   size: 16
+  offset:
+    y: 2
 
 env:
   TERM: xterm-256color
