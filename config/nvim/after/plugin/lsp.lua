@@ -25,10 +25,10 @@ lspconfig.lua_ls.setup(
           defaultConfig = {
             quote_style = 'single',
             trailing_table_separator = 'smart',
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   }
 )
 
@@ -64,7 +64,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
         -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
         async = true,
-        filter = function(client) return client.name ~= 'tsserver' end
+        filter = function(client) return client.name ~= 'tsserver' end,
       }
     end, opts)
 
@@ -74,31 +74,31 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
- vim.lsp.handlers.hover, {
-   -- Set border for hover
-   border = "single",
- }
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    -- Set border for hover
+    border = 'single',
+  }
 )
 
 vim.diagnostic.config {
   -- Set border for diagnostic floating windows
-  float = { border = "single" },
+  float = { border = 'single' },
   virtual_text = false,
 }
 
 -- null-ls
 -- Integrate linters, formatters etc. with Neovim's LSP client
 -- This plugin is being archived: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621
-local null_ls = require("null-ls")
+local null_ls = require('null-ls')
 local sources = {
-    null_ls.builtins.formatting.prettier.with({
-        prefer_local = "node_modules/.bin",
-    }),
-    null_ls.builtins.diagnostics.eslint.with({
-        prefer_local = "node_modules/.bin",
-    }),
-    null_ls.builtins.diagnostics.rubocop
+  null_ls.builtins.formatting.prettier.with({
+    prefer_local = 'node_modules/.bin',
+  }),
+  null_ls.builtins.diagnostics.eslint.with({
+    prefer_local = 'node_modules/.bin',
+  }),
+  null_ls.builtins.diagnostics.rubocop,
 }
 null_ls.setup({ sources = sources })
 

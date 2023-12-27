@@ -1,10 +1,10 @@
-require("catppuccin").setup({
+require('catppuccin').setup({
   integrations = {
-    gitgutter = true
-  }
+    gitgutter = true,
+  },
 })
 
- -- latte, frappe, macchiato, mocha
-vim.g.catppuccin_flavour = "macchiato"
+-- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = 'macchiato'
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme('catppuccin')
