@@ -26,3 +26,6 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " Remap macro key
 nnoremap Q q
 nnoremap q <Nop>
+
+" Make it easier to exit terminal insert mode
+tmap jj <C-\><C-n>
