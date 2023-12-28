@@ -10,7 +10,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " File navigation
 Plug 'pbrisbin/vim-mkdir'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 
 " Editing
 Plug 'tpope/vim-commentary'
