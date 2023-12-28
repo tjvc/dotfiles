@@ -11,7 +11,11 @@ ln -sf ~/dotfiles/Brewfile ~/Brewfile
 ln -sf ~/dotfiles/asdfrc ~/.asdfrc
 
 [ ! -d ~/.git-templates ] && ln -s ~/dotfiles/git-templates ~/.git-templates
-[ ! -d ~/bin ] && ln -s ~/dotfiles/bin ~/bin
+
+mkdir -p ~/bin
+for file in ~/dotfiles/bin/*; do
+  [ -f "$file" ] && ln -sf "$file" ~/bin
+done
 
 mkdir -p ~/.config
 [ ! -d ~/.config/alacritty ] && ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
