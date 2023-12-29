@@ -9,6 +9,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 vim.diagnostic.config {
   float = { border = 'single' },
   virtual_text = false,
+  severity_sort = true,
 }
 
 local signs = { 'Error', 'Warn', 'Hint', 'Info' }
