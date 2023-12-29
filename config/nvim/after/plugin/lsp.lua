@@ -1,12 +1,82 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- UI
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = 'single',
+  }
+)
+
+vim.diagnostic.config {
+  float = { border = 'single' },
+  virtual_text = false,
+}
+
+local signs = { 'Error', 'Warn', 'Hint', 'Info' }
+for _, sign in ipairs(signs) do
+  local hl = 'DiagnosticSign' .. sign
+  vim.fn.sign_define(hl, { texthl = hl, text = '•' })
+end
+
+-- Mappings
+
+vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist)
+
+local format_buf = function()
+  vim.lsp.buf.format {
+    filter = function(client)
+      return client.name ~= 'tsserver'
+    end,
+  }
+end
+
+local augroup = vim.api.nvim_create_augroup('lsp_format', {})
+
+local set_buf_lsp_mappings = function(bufnr)
+  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+  local opts = { buffer = bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+end
+
+local set_buf_format_mapping = function(bufnr)
+  vim.keymap.set('n', '<Leader>o', format_buf, { buffer = bufnr })
+end
+
+local create_buf_format_on_save_autocmd = function(bufnr)
+  vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = augroup,
+    buffer = bufnr,
+    callback = format_buf,
+  })
+end
+
+local on_attach = function(_, bufnr)
+  set_buf_lsp_mappings(bufnr)
+  set_buf_format_mapping(bufnr)
+  create_buf_format_on_save_autocmd(bufnr)
+end
+
+-- Language servers
 
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.tsserver.setup { capabilities = capabilities }
--- Requires additional config
--- https://github.com/Shopify/ruby-lsp/pull/830
--- lspconfig.ruby_ls.setup { capabilities = capabilities }
-lspconfig.gopls.setup { capabilities = capabilities }
+lspconfig.tsserver.setup { capabilities = capabilities, on_attach = on_attach }
+
+lspconfig.gopls.setup { capabilities = capabilities, on_attach = on_attach }
+
 lspconfig.lua_ls.setup(
   {
     cmd = {
@@ -16,6 +86,7 @@ lspconfig.lua_ls.setup(
       '--metapath=/tmp/lua-language-server/meta',
     },
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
       Lua = {
         diagnostics = {
@@ -32,77 +103,20 @@ lspconfig.lua_ls.setup(
   }
 )
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist)
-
--- Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>o', function()
-      vim.lsp.buf.format {
-        -- Don't use tsserver for formatting
-        -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-        -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
-        async = true,
-        filter = function(client) return client.name ~= 'tsserver' end,
-      }
-    end, opts)
-
-    if vim.bo.filetype == 'ruby' then
-      vim.keymap.set('n', 'gd', ':tjump <C-R><C-W><CR>', opts)
-    end
-  end,
-})
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    -- Set border for hover
-    border = 'single',
-  }
-)
-
-vim.diagnostic.config {
-  -- Set border for diagnostic floating windows
-  float = { border = 'single' },
-  virtual_text = false,
-}
-
--- null-ls
--- Integrate linters, formatters etc. with Neovim's LSP client
--- This plugin is being archived: https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621
 local null_ls = require('null-ls')
 local sources = {
-  null_ls.builtins.formatting.prettier.with({
+  null_ls.builtins.diagnostics.eslint.with({
     prefer_local = 'node_modules/.bin',
   }),
-  null_ls.builtins.diagnostics.eslint.with({
+  null_ls.builtins.formatting.prettier.with({
     prefer_local = 'node_modules/.bin',
   }),
   null_ls.builtins.diagnostics.rubocop,
 }
-null_ls.setup({ sources = sources })
-
-local signs = { 'DiagnosticSignError', 'DiagnosticSignWarn', 'DiagnosticSignHint', 'DiagnosticSignInfo' }
-for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign, { texthl = sign, text = '•', numhl = '' })
-end
+null_ls.setup({
+  sources = sources,
+  on_attach = function(_, bufnr)
+    set_buf_format_mapping(bufnr)
+    create_buf_format_on_save_autocmd(bufnr)
+  end,
+})
