@@ -74,6 +74,10 @@ end
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- TODO: Support LSP snippets (requires a snippet engine)
+-- https://github.com/hrsh7th/nvim-cmp/issues/304
+capabilities['textDocument']['completion']['completionItem']['snippetSupport'] = false
+
 lspconfig.tsserver.setup { capabilities = capabilities, on_attach = on_attach }
 
 lspconfig.gopls.setup { capabilities = capabilities, on_attach = on_attach }
