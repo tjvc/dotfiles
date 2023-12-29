@@ -31,6 +31,8 @@ local format_buf = function()
       return client.name ~= 'tsserver'
     end,
   }
+  -- https://github.com/neovim/neovim/issues/25014
+  vim.diagnostic.show()
 end
 
 local augroup = vim.api.nvim_create_augroup('lsp_format', {})
