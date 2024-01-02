@@ -94,19 +94,6 @@ lspconfig.lua_ls.setup(
     },
     capabilities = capabilities,
     on_attach = on_attach,
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { 'vim' },
-        },
-        format = {
-          defaultConfig = {
-            quote_style = 'single',
-            trailing_table_separator = 'smart',
-          },
-        },
-      },
-    },
   }
 )
 
