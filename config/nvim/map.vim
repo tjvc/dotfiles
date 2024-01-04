@@ -29,3 +29,6 @@ nnoremap q <Nop>
 
 " Make it easier to exit terminal insert mode
 tmap jj <C-\><C-n>
+
+" Close quickfix window
+nnoremap <Leader>c :cclose<CR>
