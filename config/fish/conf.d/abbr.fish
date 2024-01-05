@@ -23,6 +23,7 @@ abbr -a grs 'git reset'
 abbr -a gsh 'git show'
 abbr -a gss 'git stash'
 abbr -a gst 'git status'
+abbr -a k 'kubectl'
 abbr -a ll 'ls -alFh'
 abbr -a nv nvim
 abbr -a r 'git rebase'
