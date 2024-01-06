@@ -48,3 +48,7 @@ Install the latest stable Ruby with asdf:
 ```bash
     $ gem install bundler standard
 ```
+
+#### ctags
+
+`git-templates` contains hooks for generating tags on repository changes, which are copied to the `.git` directory on `git init`. To activate them, remove the `.sample` suffix from files in `.git/hooks`.
