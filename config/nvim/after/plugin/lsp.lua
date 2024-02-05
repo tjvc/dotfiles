@@ -80,7 +80,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- https://github.com/hrsh7th/nvim-cmp/issues/304
 capabilities['textDocument']['completion']['completionItem']['snippetSupport'] = false
 
-lspconfig.tsserver.setup { capabilities = capabilities, on_attach = on_attach }
+lspconfig.tsserver.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  root_dir = vim.loop.cwd,
+}
 
 lspconfig.gopls.setup { capabilities = capabilities, on_attach = on_attach }
 
