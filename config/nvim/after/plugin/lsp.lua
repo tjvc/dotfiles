@@ -112,9 +112,12 @@ local sources = {
   null_ls.builtins.diagnostics.rubocop,
 }
 null_ls.setup({
+  -- debug = true,
   sources = sources,
   on_attach = function(_, bufnr)
     set_buf_format_mapping(bufnr)
     create_buf_format_on_save_autocmd(bufnr)
   end,
 })
+
+-- vim.lsp.set_log_level('debug')
