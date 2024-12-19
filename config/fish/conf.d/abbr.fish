@@ -29,10 +29,12 @@ abbr -a nv nvim
 abbr -a r 'git rebase'
 abbr -a ra 'git rebase --abort'
 abbr -a rc 'git rebase --continue'
+abbr -a ri 'git rebase -i'
 abbr -a rim 'git rebase -i origin/main'
 abbr -a sc 'bin/rails console'
 abbr -a ss 'bin/rails server'
 abbr -a t 'tmux'
+abbr -a ta 'tmux attach'
 abbr -a tkr 'tmux kill-server'
 abbr -a ts tmux-sessionizer
 abbr -a y yarn
