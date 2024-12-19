@@ -101,6 +101,11 @@ lspconfig.lua_ls.setup(
   }
 )
 
+lspconfig.ruby_lsp.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 local null_ls = require('null-ls')
 local sources = {
   null_ls.builtins.diagnostics.eslint_d.with({
